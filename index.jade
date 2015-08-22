@@ -1,0 +1,16 @@
+doctype
+head
+  title An example
+body
+
+  //- Harp will let us loop through these, but that's
+  //- a bad idea because it will include them in file
+  //- order, which makes content difficult to arrange.
+
+  //- This seems fine. Slate does something similar.
+
+  include:markdown /includes/one.md
+  include:markdown /includes/two.md
+  include:markdown /includes/three.md
+
+  //- TODO - TOCIFY these includes.
