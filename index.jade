@@ -8,49 +8,30 @@ head
     $(document).ready(function(){
       //- grab every h1, h2, h3
       //- Note: these stay in DOM order
-      $('h1, h2, h3').each(function(){
+      $('h2, h3').each(function(){
         //- console.log($(this).text());
 
         //- If it's an H1 make a top level LI
-        if( $(this).is('h1')  ){
-          $('ul.nav').append('<li><a href="">'+$(this).text()+'</a></li>');
-        }
+        var navClass="";
+        if($(this).is('h2')){navClass="nav__heading";}
+        if($(this).is('h3')){navClass="nav__entry";}
 
-        //- if it's an H2, wrap the LI in a UL and add that
-        //- to the last current top level LI
-        if( $(this).is('h2')  ){
-          $('ul.nav>li').last().append('<ul><li><a href="">'+$(this).text()+'</a></li></ul>');
-          //- This currently creates a UL wrapper for EVERY H2
-          //- that's wrong. it should detect if this is the first H2
-          //- following an H1, and only then create a UL,
-          //- and then subsequent ones should get added to that
-          //- first UL
-        }
-
-        //- All of this is actually maddeningly complicated.
-        //- This could be handled with classes and not nesting.
-        //- Not semantic... but... simplicity!
-        
+        $('ul.nav').append('<li><a href="" class="'+navClass+'">'+$(this).text()+'</a></li>');
+      
       });
       //- grab every h1, h2, h3
       //- print em to see what the orders like
     });
 body
 
-  ul.col-xs-4.section.section--fog.nav
+  ul.col-xs-2.section.section--fog.nav
     //- Stuff gets added here by the nav JS
 
-  div.col-xs-8.section.section--fog
+  div.col-xs-10.section.section--fog
     //- Harp will let us loop through these, but that's
     //- a bad idea because it will include them in file
     //- order, which makes content difficult to arrange.
 
     //- This seems fine. Slate does something similar.
 
-    include:markdown /includes/one.md
-    include:markdown /includes/two.md
-    include:markdown /includes/three.md
-
-    //- TODO - TOCIFY these includes.
-
-
+    include:markdown /includes/demo.md
