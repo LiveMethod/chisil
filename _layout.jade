@@ -1,6 +1,64 @@
 doctype
-html
-  head
-    link(rel="stylesheet" href="/main.css")
+head
+  title An example
+
+  link(rel='stylesheet', href='https://getdash.io/css/karmic-style.css')
+  link(rel='stylesheet', href='/css/jquery.tocify.css')
+  link(rel='stylesheet', href='/css/main.css')
+  
+  script(type='text/javascript', src="http://code.jquery.com/jquery-1.9.1.min.js")
+  script(type='text/javascript', src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js")
+  script(type='text/javascript', src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js")
+  script.
+    $(document).ready(function(){
+      //- grab every h1, h2, h3
+      //- Note: these stay in DOM order
+      //- $('h2, h3').each(function(){
+
+      //-   //- Give a class depending on heading type
+      //-   var navClass="";
+      //-   if($(this).is('h2')){navClass="nav__heading";}
+      //-   if($(this).is('h3')){navClass="nav__entry";}
+
+      //-   //- Add it to the nav list
+      //-   $('ul.nav').append('<li><a href="" class="'+navClass+'">'+$(this).text()+'</a></li>');
+      
+      //- }); // heading grabber
+
+
+      //- Replacing the above with TOCIFY
+      var toc = $("ul.nav").tocify({
+                  selectors: 'h2, h3',
+                  extendPage: false,
+                  theme: 'none',
+                  smoothScroll: false,
+                  showEffectSpeed: 0,
+                  hideEffectSpeed: 180,
+                  ignoreSelector: '.toc-ignore',
+                  highlightOffset: 60,
+                  scrollTo: -1,
+                  scrollHistory: true,
+                });
+
+
+      //- Wrap everything between the start of an entry title and a blockquote in the entry wrapper.
+
+      $('h3').each(function(){
+        $(this).nextUntil('blockquote').andSelf().wrapAll('<section class="section--entry col-sm-6"></section>');
+      });
+
+      //- Wrap everything between the start of an blockquote and an element that delineates a new entry in the example wrapper.
+
+      $('blockquote').each(function(){
+        $(this).nextUntil('h1, h2, h3, section.section--entry').andSelf().wrapAll('<section class="section--example col-sm-6"></section>');
+      });
+
+      //- Wrap everything left over as a non-entry, but put it in the entry column
+      $('.content>*:not(section)').wrap('<section class="section--other col-sm-6"></section>');
+      
+
+      
+
+    });
   body
     != yield

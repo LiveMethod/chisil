@@ -1,53 +1,13 @@
-doctype
-head
-  title An example
-
-  link(rel='stylesheet', href='https://getdash.io/css/karmic-style.css')
-  script(type='text/javascript', src="http://code.jquery.com/jquery-1.9.1.min.js")
-  script.
-    $(document).ready(function(){
-      //- grab every h1, h2, h3
-      //- Note: these stay in DOM order
-      $('h2, h3').each(function(){
-
-        //- Give a class depending on heading type
-        var navClass="";
-        if($(this).is('h2')){navClass="nav__heading";}
-        if($(this).is('h3')){navClass="nav__entry";}
-
-        //- Add it to the nav list
-        $('ul.nav').append('<li><a href="" class="'+navClass+'">'+$(this).text()+'</a></li>');
-      
-      }); // heading grabber
-
-
-      //- Wrap everything between the start of an entry title and a blockquote in the entry wrapper.
-
-      $('h3').each(function(){
-        $(this).nextUntil('blockquote').andSelf().wrapAll('<section class="section--entry col-sm-6" style="border:1px solid red; padding:5px; margin-top:5px"></section>');
-      });
-
-      //- Wrap everything between the start of an blockquote and an element that delineates a new entry in the example wrapper.
-
-      $('blockquote').each(function(){
-        $(this).nextUntil('h1, h2, h3, section.section--entry').andSelf().wrapAll('<section class="section--example col-sm-6" style="border:1px solid blue; padding:5px; margin-top:5px; "></section>');
-      });
-
-      //- Wrap everything left over as a non-entry, but put it in the entry column
-
-      //- FIXME: This margin should disappear on XS so the content can fill more than 50%
-      $('.content>*:not(section)').wrap('<section class="section--other col-sm-6" style="border:1px solid yellow; padding:5px; margin-top:5px; margin-right:50%;"></section>');
-      
-
-      
-
-    });
 body
 
   ul.col-xs-2.section.section--fog.nav
     //- Nav will autogenerate here
 
-  div.col-xs-10.section.section--fog.content
+  //- div.col-xs-5.section.section--fog.section--example-bg.pull-right
+
+  div.col-xs-10.col-xs-offset-2.section.section--white.content
 
     //- Include docs files here
     include:markdown /includes/demo.md
+
+  

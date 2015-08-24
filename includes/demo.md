@@ -4,7 +4,7 @@ text about stuff text about stuff text about stuff text about stuff text about s
 
 ## Heading that is actually quite long and so wraps
 
----
+
 
 ### Entry
 
@@ -26,7 +26,6 @@ do whatever tho
 
 You can say anything you want here and it will stay on the right column until the next heading.
 
----
 
 ### Entry
 
@@ -48,7 +47,7 @@ do whatever tho
 
 You can say anything you want here and it will stay on the right column until the next heading.
 
----
+
 
 # H1 heading
 
@@ -56,7 +55,7 @@ text about stuff
 
 ## Heading
 
----
+
 
 ### Entry
 
@@ -78,7 +77,7 @@ do whatever tho
 
 You can say anything you want here and it will stay on the right column until the next heading.
 
----
+
 
 ### Entry
 
@@ -100,7 +99,7 @@ do whatever tho
 
 You can say anything you want here and it will stay on the right column until the next heading.
 
----
+
 
 ### Entry
 
@@ -122,7 +121,7 @@ do whatever tho
 
 You can say anything you want here and it will stay on the right column until the next heading.
 
----
+
 
 ### Entry
 
@@ -144,7 +143,7 @@ do whatever tho
 
 You can say anything you want here and it will stay on the right column until the next heading.
 
----
+
 
 ### Entry
 
@@ -186,7 +185,7 @@ sdf
 
 You can say anything you want here and it will stay on the right column until the next heading.
 
----
+
 
 ### Entry
 
@@ -208,4 +207,3 @@ do whatever tho
 
 You can say anything you want here and it will stay on the right column until the next heading.
 
----
