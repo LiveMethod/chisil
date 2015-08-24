@@ -29,13 +29,11 @@ head
       //- Replacing the above with TOCIFY
       var toc = $("ul.nav").tocify({
                   selectors: 'h2, h3',
-                  extendPage: false,
                   theme: 'none',
                   smoothScroll: false,
-                  showEffectSpeed: 0,
-                  hideEffectSpeed: 180,
-                  ignoreSelector: '.toc-ignore',
-                  highlightOffset: 60,
+                  showEffectSpeed: 350,
+                  hideEffectSpeed: 90,
+                  highlightOffset: 50,
                   scrollTo: -1,
                   scrollHistory: true,
                 });
@@ -55,6 +53,9 @@ head
 
       //- Wrap everything left over as a non-entry, but put it in the entry column
       $('.content>*:not(section)').wrap('<section class="section--other col-sm-6"></section>');
+      //- FIXME: These could be wrapped in a temp, then run through and grab all temp items and wrap them in a block.
+      //- This would enable the other block to have vertical margin like the entry and example blocks.
+
       
 
       
