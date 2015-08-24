@@ -1,7 +1,36 @@
 // This is auto included and overridden by the karmic style included in head
 
+@side-padding: 40px;
+
 .content{
   position: relative;
+  color: #4C555A;
+
+  font-size: 14px;
+  line-height: 26px;
+
+  h1{
+    color: #292E31;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 0;
+    font-weight: 100;
+  }
+
+  h2{
+    color: #292E31;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0;
+  }
+
+  h3{
+    color: #292E31;
+    font-size: 24px;
+    line-height: 24px;
+    // font-weight: bold;
+    letter-spacing: 0;
+  }
 
 }
 
@@ -10,7 +39,7 @@
   left: 0;
   top: 0;
   height: 100%;
-  background-color: yellow;
+  background-color: #fff;
 }
 
 .fill-example{
@@ -18,7 +47,7 @@
   right: 0;
   top: 0;
   height: 100%;
-  background-color: red;
+  background-color: #2d3134;
 }
 
 .section.app-content{
@@ -35,16 +64,33 @@
   margin-top:@vertical-gap*0.33;
   padding-top:@vertical-gap*0.66;
   border-top: 1px solid #ddd;
+  padding-left: @side-padding;
+  padding-right: @side-padding;
 }
 
 .section--example{
   margin-top:@vertical-gap;
   padding-top: 15px;
+  color: #D0D4D7;
+
+  pre,code{
+    background-color: #272B2D;
+    border:none;
+  }
+
+  blockquote{
+    padding:0;
+    border:none;
+    font-style: normal;
+  }
+
 }
 
 .section--other{
   @media (min-width: 768px) {
     margin-right:50%;
+    padding-left: @side-padding;
+    padding-right: @side-padding;
   }
 }
 
