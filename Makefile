@@ -1,4 +1,6 @@
+BIN = ./node_modules/.bin
+
 all: start
 
 start:
-	harp server
+	$(BIN)/harp server

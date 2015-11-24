@@ -1,0 +1,32 @@
+{
+  "name": "chisil",
+  "version": "1.0.0",
+  "description": "slate-inspired docs w jade and markdown",
+  "main": "index.js",
+  "dependencies": {
+    "harp": "^0.20.1",
+    "jstransformer-markdown": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/livemethod/chisil.git"
+  },
+  "keywords": [
+    "jade",
+    "markdown",
+    "styleguide",
+    "docs",
+    "documentation",
+    "harp"
+  ],
+  "author": "Rick Steele",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/livemethod/chisil/issues"
+  },
+  "homepage": "https://github.com/livemethod/chisil#readme"
+}
