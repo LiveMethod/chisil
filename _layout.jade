@@ -2,7 +2,7 @@ doctype
 head
   title An example
 
-  link(rel='stylesheet', href='https://getdash.io/css/karmic.css')
+  link(rel='stylesheet', href='https://getdash.io/sup/css/karmic.css')
   link(rel='stylesheet', href='/css/jquery.tocify.css')
   link(rel='stylesheet', href='/css/main.css')
   
@@ -42,17 +42,21 @@ head
       //- Wrap everything between the start of an entry title and a blockquote in the entry wrapper.
 
       $('h3').each(function(){
-        $(this).nextUntil('blockquote').andSelf().wrapAll('<section class="section--entry col-sm-6"></section>');
+        $(this).nextUntil('blockquote').andSelf().wrapAll('<section class="entry col-sm-6"></section>');
       });
 
       //- Wrap everything between the start of an blockquote and an element that delineates a new entry in the example wrapper.
 
       $('blockquote').each(function(){
-        $(this).nextUntil('h1, h2, h3, section.section--entry').andSelf().wrapAll('<section class="section--example col-sm-6"></section>');
+        $(this).nextUntil('h1, h2, h3, section.entry').andSelf().wrapAll('<section class="example col-sm-6"></section>');
       });
 
       //- Wrap everything left over as a non-entry, but put it in the entry column
-      $('.content>*:not(section)').wrap('<section class="section--other col-sm-6"></section>');
+      $('.content>*:not(section)').wrap('<section class="other col-sm-6"></section>');
+
+      // add styling to code blocks
+      $('section.example pre').addClass('slice shadow');
+
       //- FIXME: These could be wrapped in a temp, then run through and grab all temp items and wrap them in a block.
       //- This would enable the other block to have vertical margin like the entry and example blocks.
 

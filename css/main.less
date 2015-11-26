@@ -10,7 +10,6 @@
   line-height: 26px;
 
   h1{
-    color: #292E31;
     font-size: 32px;
     line-height: 48px;
     letter-spacing: 0;
@@ -18,7 +17,6 @@
   }
 
   h2{
-    color: #292E31;
     font-size: 24px;
     line-height: 32px;
     letter-spacing: 0;
@@ -34,33 +32,27 @@
 
 }
 
-.fill-entry{
+.fill--entry{
   position: fixed;
   left: 0;
   top: 0;
   height: 100%;
-  background-color: #fff;
+  border-left-style:solid;
+  border-right-style:solid;
+  border-right-width: 1px;
+  border-left-width: 1px;
 }
 
-.fill-example{
+.fill--example{
   position: fixed;
   right: 0;
   top: 0;
-  height: 100%;
-  background-color: #2d3134;
-}
-
-.section.app-content{
-  background: none;
-}
-
-.section--example-bg{
   height: 100%;
 }
 
 @vertical-gap: 50px;
 
-.section--entry{
+.entry{
   margin-top:@vertical-gap*0.33;
   padding-top:@vertical-gap*0.66;
   border-top: 1px solid #ddd;
@@ -68,13 +60,13 @@
   padding-right: @side-padding;
 }
 
-.section--example{
+.example{
   margin-top:@vertical-gap;
   padding-top: 15px;
   color: #D0D4D7;
 
+  // code blocks
   pre,code{
-    background-color: #272B2D;
     border:none;
   }
 
@@ -86,7 +78,7 @@
 
 }
 
-.section--other{
+.other{
   @media (min-width: 768px) {
     margin-right:50%;
     padding-left: @side-padding;
